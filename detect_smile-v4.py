@@ -135,3 +135,10 @@ camera.release()
 cv2.destroyAllWindows()
 
 print("satisfied_count:", satisfied_count)
+
+#save to file with time 
+curr_time = time.strftime("%H:%M:%S",time.localtime())
+file = open("results.txt", "a") 
+str = repr(satisfied_count) 
+file.write("user count at time " + curr_time + " => " + str + "\n") 
+file.close()
